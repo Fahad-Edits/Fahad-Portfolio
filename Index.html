@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Fahad Amin | Video Editor</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:#050505;
+color:white;
+overflow-x:hidden;
+}
+
+/* LOADER */
+
+.loader{
+position:fixed;
+inset:0;
+background:#000;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+z-index:99999;
+animation:hideLoader 3s forwards;
+}
+
+.loader h1{
+font-size:5rem;
+font-weight:900;
+letter-spacing:8px;
+}
+
+.loader p{
+margin-top:10px;
+color:#aaa;
+}
+
+@keyframes hideLoader{
+0%,80%{
+opacity:1;
+visibility:visible;
+}
+100%{
+opacity:0;
+visibility:hidden;
+}
+}
+
+/* CURSOR */
+
+.cursor{
+position:fixed;
+width:25px;
+height:25px;
+background:#7c3aed;
+border-radius:50%;
+pointer-events:none;
+filter:blur(10px);
+z-index:9999;
+}
+
+/* NAVBAR */
+
+nav{
+position:fixed;
+top:20px;
+left:50%;
+transform:translateX(-50%);
+width:90%;
+max-width:1200px;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,0.08);
+padding:18px 30px;
+border-radius:100px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:1000;
+}
+
+.logo{
+font-weight:800;
+font-size:1.2rem;
+}
+
+.nav-links{
+display:flex;
+gap:25px;
+}
+
+.nav-links a{
+color:white;
+text-decoration:none;
+font-weight:500;
+}
+
+/* HERO */
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:100px 8%;
+position:relative;
+overflow:hidden;
+}
+
+.hero::before{
+content:'';
+position:absolute;
+width:700px;
+height:700px;
+background:#7c3aed;
+filter:blur(180px);
+opacity:.25;
+top:-200px;
+right:-200px;
+}
+
+.hero-content{
+display:grid;
+grid-template-columns:1fr 1fr;
+align-items:center;
+gap:50px;
+max-width:1300px;
+width:100%;
+}
+
+.hero-text h4{
+color:#a855f7;
+letter-spacing:3px;
+margin-bottom:15px;
+}
+
+.hero-text h1{
+font-size:6rem;
+line-height:1;
+font-weight:900;
+}
+
+.hero-text p{
+margin-top:20px;
+font-size:1.1rem;
+color:#b4b4b4;
+max-width:600px;
+}
+
+.hero-buttons{
+margin-top:30px;
+display:flex;
+gap:15px;
+}
+
+.btn{
+padding:16px 28px;
+border-radius:50px;
+text-decoration:none;
+font-weight:700;
+transition:.4s;
+}
+
+.btn-primary{
+background:#7c3aed;
+color:white;
+}
+
+.btn-primary:hover{
+transform:translateY(-5px);
+}
+
+.btn-secondary{
+border:1px solid rgba(255,255,255,0.15);
+color:white;
+}
+
+.btn-secondary:hover{
+background:white;
+color:black;
+}
+
+.stats{
+display:flex;
+gap:25px;
+margin-top:40px;
+flex-wrap:wrap;
+}
+
+.stat{
+background:rgba(255,255,255,.05);
+padding:15px 20px;
+border-radius:18px;
+backdrop-filter:blur(10px);
+}
+
+.stat h3{
+color:#a855f7;
+}
+
+.hero-image{
+position:relative;
+display:flex;
+justify-content:center;
+}
+
+.hero-image img{
+width:100%;
+max-width:550px;
+position:relative;
+z-index:2;
+}
+
+.bg-text{
+position:absolute;
+font-size:11rem;
+font-weight:900;
+color:rgba(255,255,255,0.03);
+line-height:0.8;
+text-align:center;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+z-index:1;
+}
+
+@media(max-width:900px){
+
+.hero-content{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.hero-text h1{
+font-size:4rem;
+}
+
+.hero-buttons{
+justify-content:center;
+}
+
+.stats{
+justify-content:center;
+}
+
+.bg-text{
+font-size:6rem;
+}
+}
+
+</style>
+</head>
+<body>
+
+<div class="loader">
+<h1>FAHAD</h1>
+<p>Turning Raw Footage Into Engaging Content</p>
+</div>
+
+<div class="cursor"></div>
+
+<nav>
+<div class="logo">FAHAD</div>
+
+<div class="nav-links">
+<a href="#">Home</a>
+<a href="#">Portfolio</a>
+<a href="#">Skills</a>
+<a href="#">Contact</a>
+</div>
+</nav>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="hero-text">
+
+<h4>VIDEO EDITOR</h4>
+
+<h1>Turning Raw Footage Into Engaging Content</h1>
+
+<p>
+Professional Video Editor helping creators, brands and businesses
+transform ordinary footage into high-retention content that generates
+results.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#portfolio" class="btn btn-primary">
+View Portfolio
+</a>
+
+<a href="#contact" class="btn btn-secondary">
+Contact Me
+</a>
+
+</div>
+
+<div class="stats">
+
+<div class="stat">
+<h3>100+</h3>
+<p>Projects</p>
+</div>
+
+<div class="stat">
+<h3>200+</h3>
+<p>Videos Edited</p>
+</div>
+
+<div class="stat">
+<h3>1.5M+</h3>
+<p>Views Generated</p>
+</div>
+
+<div class="stat">
+<h3>3+</h3>
+<p>Years Experience</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="hero-image">
+
+<div class="bg-text">
+VIDEO<br>EDITOR
+</div>
+
+<img src="profile.png" alt="Fahad">
+
+</div>
+
+</div>
+
+</section>
+<section class="stats-section">
+    <div class="stats-container">
+
+        <div class="stat-card">
+            <h2>100+</h2>
+            <p>Projects Completed</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>200+</h2>
+            <p>Videos Edited</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>1.5M+</h2>
+            <p>Views Generated</p>
+        </div>
+
+    </div>
+</section>
+
+<style>
+.stats-section{
+    padding:120px 10%;
+    background:#050505;
+    position:relative;
+    overflow:hidden;
+}
+
+.stats-section::before{
+    content:'';
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:#7b2cff;
+    filter:blur(220px);
+    opacity:.18;
+    top:-200px;
+    left:-150px;
+}
+
+.stats-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.stat-card{
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.08);
+    backdrop-filter:blur(20px);
+    border-radius:30px;
+    padding:45px;
+    text-align:center;
+    transition:.4s;
+}
+
+.stat-card:hover{
+    transform:translateY(-12px);
+    border-color:#8b5cf6;
+    box-shadow:0 0 40px rgba(139,92,246,.4);
+}
+
+.stat-card h2{
+    font-size:4rem;
+    color:#9d6bff;
+    margin-bottom:10px;
+}
+
+.stat-card p{
+    color:#cfcfcf;
+    font-size:1.1rem;
+    letter-spacing:1px;
+}
+</style>
+<section class="skills-section">
+
+    <h2 class="section-title">What I Do</h2>
+
+    <div class="skills-grid">
+
+        <div class="skill-card">
+            <h3>Short Form Editing</h3>
+            <p>Fast-paced reels, shorts and TikTok videos designed to maximize retention and engagement.</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Long Form Editing</h3>
+            <p>Professional YouTube videos with storytelling, pacing, transitions and audience retention.</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>YouTube Content</h3>
+            <p>Content optimized for watch time, click-through rate and channel growth.</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Storytelling</h3>
+            <p>Transforming raw footage into engaging content that keeps viewers watching.</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Sound Design</h3>
+            <p>Professional audio balancing, sound effects and music placement.</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Visual Effects</h3>
+            <p>Creative transitions, text animations and modern editing techniques.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+
+.skills-section{
+    padding:120px 10%;
+    background:#070707;
+}
+
+.section-title{
+    text-align:center;
+    font-size:3rem;
+    margin-bottom:60px;
+    color:white;
+}
+
+.skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.skill-card{
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.08);
+    padding:35px;
+    border-radius:25px;
+    transition:.4s;
+}
+
+.skill-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 40px rgba(123,44,255,.35);
+    border-color:#7b2cff;
+}
+
+.skill-card h3{
+    color:#9d6bff;
+    margin-bottom:15px;
+    font-size:1.4rem;
+}
+
+.skill-card p{
+    color:#cfcfcf;
+    line-height:1.8;
+}
+
+</style>
+<section class="portfolio-section">
+
+<h2 class="section-title">Featured Work</h2>
+
+<div class="portfolio-grid">
+
+<div class="portfolio-card">
+<iframe src="https://www.youtube.com/embed/5pVPMLv1iVs" allowfullscreen></iframe>
+</div>
+
+<div class="portfolio-card">
+<iframe src="https://www.youtube.com/embed/9xSeGcvHQVU" allowfullscreen></iframe>
+</div>
+
+<div class="portfolio-card">
+<iframe src="https://www.youtube.com/embed/34vX03-rV2M" allowfullscreen></iframe>
+</div>
+
+<div class="portfolio-card">
+<iframe src="https://www.youtube.com/embed/-IK0779ANhs" allowfullscreen></iframe>
+</div>
+
+<div class="portfolio-card">
+<iframe src="https://www.youtube.com/embed/542fqpVVIHY" allowfullscreen></iframe>
+</div>
+
+<div class="portfolio-card">
+<iframe src="https://www.youtube.com/embed/xRArb47p5us" allowfullscreen></iframe>
+</div>
+
+<div class="portfolio-card">
+<iframe src="https://www.youtube.com/embed/_4OyhGSDuE0" allowfullscreen></iframe>
+</div>
+
+<div class="portfolio-card long-video">
+<iframe src="https://www.youtube.com/embed/VRraGrMmuIA" allowfullscreen></iframe>
+</div>
+
+<div class="portfolio-card long-video">
+<iframe src="https://www.youtube.com/embed/2qaf-_ZNwXE" allowfullscreen></iframe>
+</div>
+
+<div class="portfolio-card long-video">
+<iframe src="https://www.youtube.com/embed/Cm5MKh54Nd4" allowfullscreen></iframe>
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+.portfolio-section{
+padding:120px 10%;
+background:#050505;
+}
+
+.portfolio-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:30px;
+}
+
+.portfolio-card{
+background:#111;
+border-radius:25px;
+overflow:hidden;
+border:1px solid rgba(255,255,255,.08);
+transition:.4s;
+}
+
+.portfolio-card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 40px rgba(123,44,255,.4);
+}
+
+.portfolio-card iframe{
+width:100%;
+height:550px;
+border:none;
+}
+
+.long-video iframe{
+height:280px;
+}
+
+</style>
+<section class="contact-section">
+
+<h2 class="section-title">Let's Work Together</h2>
+
+<div class="contact-container">
+
+<div class="contact-card">
+<h3>Email</h3>
+<p>itsfahad190@gmail.com</p>
+<a href="mailto:itsfahad190@gmail.com" class="contact-btn">Send Email</a>
+</div>
+
+<div class="contact-card">
+<h3>WhatsApp</h3>
+<p>+92 3173460190</p>
+<a href="https://wa.me/923173460190" target="_blank" class="contact-btn">Message Me</a>
+</div>
+
+</div>
+
+</section>
+
+<footer class="footer">
+<p>© 2026 Fahad • Video Editor</p>
+</footer>
+
+<style>
+
+.contact-section{
+padding:120px 10%;
+background:#070707;
+text-align:center;
+}
+
+.contact-container{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:30px;
+margin-top:50px;
+}
+
+.contact-card{
+width:320px;
+padding:40px;
+background:rgba(255,255,255,.04);
+border:1px solid rgba(255,255,255,.08);
+border-radius:25px;
+transition:.4s;
+}
+
+.contact-card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 40px rgba(123,44,255,.35);
+}
+
+.contact-card h3{
+color:#9d6bff;
+margin-bottom:15px;
+}
+
+.contact-card p{
+color:#d6d6d6;
+margin-bottom:25px;
+}
+
+.contact-btn{
+display:inline-block;
+padding:12px 28px;
+background:#7b2cff;
+color:white;
+text-decoration:none;
+border-radius:50px;
+transition:.4s;
+}
+
+.contact-btn:hover{
+transform:scale(1.05);
+box-shadow:0 0 30px rgba(123,44,255,.6);
+}
+
+.footer{
+padding:30px;
+text-align:center;
+background:black;
+color:#888;
+}
+
+</style>
+<script>
+
+const cursor = document.querySelector(".cursor");
+
+document.addEventListener("mousemove",(e)=>{
+cursor.style.left=e.clientX+"px";
+cursor.style.top=e.clientY+"px";
+});
+
+</script>
+
+</body>
+</html>
