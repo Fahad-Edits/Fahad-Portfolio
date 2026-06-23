@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Fahad Amin Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Inter,sans-serif;background:#08090c;color:#fff;overflow-x:hidden}
+body:before{content:'';position:fixed;inset:0;background:radial-gradient(circle at 50% 10%,rgba(95,92,255,.18),transparent 40%);pointer-events:none}
+.loader{position:fixed;inset:0;background:#050505;display:flex;align-items:center;justify-content:center;flex-direction:column;z-index:9999;transition:1s}
+.hide{opacity:0;visibility:hidden}
+.loader h1{font-size:5rem}
+nav{position:sticky;top:20px;z-index:99;width:min(1100px,92%);margin:20px auto;padding:14px 24px;border-radius:18px;background:rgba(255,255,255,.05);backdrop-filter:blur(20px);display:flex;justify-content:space-between}
+nav ul{display:flex;gap:20px;list-style:none}
+nav a{text-decoration:none;color:#fff}
+section{width:min(1200px,92%);margin:auto;padding:100px 0}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;min-height:90vh}
+.hero h1{font-size:clamp(3rem,8vw,6rem);line-height:.95}
+.hero p,.about p{color:#b8bfd0;line-height:1.8}
+.badge,.btn,.glass{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)}
+.badge{display:inline-block;padding:10px 16px;border-radius:999px;margin-bottom:20px}
+.btn{padding:14px 22px;border-radius:14px;color:#fff;text-decoration:none;display:inline-block}
+.buttons{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+.glass{backdrop-filter:blur(20px);border-radius:24px}
+.hero-img{position:relative;text-align:center}
+.hero-img img{max-width:100%;max-height:760px;position:relative;z-index:2}
+.glow{position:absolute;width:420px;height:420px;background:radial-gradient(circle,rgba(110,90,255,.45),transparent 70%);left:50%;top:45%;transform:translate(-50%,-50%)}
+.bgword{position:absolute;left:0;right:0;top:20%;font-size:12vw;font-weight:800;opacity:.04}
+.about-card,.stat,.skill,.video-card,.contact{padding:30px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.skills,.port-grid{display:grid;gap:20px}
+.skills{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.port-grid{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.video-card iframe{width:100%;aspect-ratio:9/16;border:none;border-radius:16px}
+.long iframe{aspect-ratio:16/9}
+.reveal{opacity:0;transform:translateY(40px);transition:.8s}
+.reveal.show{opacity:1;transform:none}
+.cursor{width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(90,90,255,.12),transparent 70%);position:fixed;pointer-events:none}
+.footer{text-align:center;padding:40px;border-top:1px solid rgba(255,255,255,.08);color:#aab}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.stats{grid-template-columns:1fr}nav ul{display:none}}
+</style>
+</head>
+<body>
+<div class="cursor"></div>
+<div class="loader" id="loader"><h1>FAHAD</h1><p>Turning Raw Footage Into Engaging Content</p></div>
+
+<nav><strong>FAHAD AMIN</strong><ul><li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#portfolio">Portfolio</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+
+<section class="hero" id="home">
+<div>
+<div class="badge">Video Editor</div>
+<h1>Turning Raw Footage Into Engaging Content</h1>
+<p style="margin-top:20px">Professional Video Editor helping creators, brands and businesses transform ordinary footage into high-retention content through storytelling, pacing and strategic editing.</p>
+<div class="buttons"><a class="btn" href="#portfolio">View Portfolio</a><a class="btn" href="#contact">Contact Me</a></div>
+</div>
+<div class="hero-img">
+<div class="bgword">FAHAD</div>
+<div class="glow"></div>
+<img src="data:image/png;base64,IMGDATA" alt="Fahad">
+</div>
+</section>
+
+<section id="about" class="reveal"><div class="glass about-card"><h2>About Me</h2><br><p>I am a professional video editor with over 3 years of experience creating YouTube videos, marketing content, and social media videos. I have worked with multiple YouTube channels, creators, and brands, helping them improve audience retention through strong storytelling, pacing, and engaging edits. My goal is to create content that not only looks professional but also keeps viewers watching.</p></div></section>
+
+<section class="reveal"><div class="stats">
+<div class="glass stat"><h2 data-count="100">0</h2><p>Projects Completed</p></div>
+<div class="glass stat"><h2 data-count="200">0</h2><p>Videos Edited</p></div>
+<div class="glass stat"><h2 data-count="3">0</h2><p>Years Experience</p></div>
+</div></section>
+
+<section id="skills" class="reveal"><h2 style="margin-bottom:20px">Skills</h2><div class="skills">
+<div class="glass skill">YouTube Editing</div>
+<div class="glass skill">Short Form Editing</div>
+<div class="glass skill">Long Form Editing</div>
+<div class="glass skill">Marketing Videos</div>
+<div class="glass skill">Social Media Content</div>
+<div class="glass skill">Storytelling</div>
+<div class="glass skill">Content Pacing</div>
+<div class="glass skill">Video Optimization</div>
+</div></section>
+
+<section id="portfolio" class="reveal"><h2>Short Form Content</h2><br><div class="port-grid">
+<div class="glass video-card"><iframe src="https://www.youtube.com/embed/5pVPMLv1iVs"></iframe></div><div class="glass video-card"><iframe src="https://www.youtube.com/embed/9xSeGcvHQVU"></iframe></div><div class="glass video-card"><iframe src="https://www.youtube.com/embed/34vX03-rV2M"></iframe></div><div class="glass video-card"><iframe src="https://www.youtube.com/embed/-IK0779ANhs"></iframe></div><div class="glass video-card"><iframe src="https://www.youtube.com/embed/542fqpVVIHY"></iframe></div><div class="glass video-card"><iframe src="https://www.youtube.com/embed/xRArb47p5us"></iframe></div><div class="glass video-card"><iframe src="https://www.youtube.com/embed/_4OyhGSDuE0"></iframe></div></div><br><br><h2>Long Form Content</h2><br><div class="port-grid"><div class="glass video-card long"><iframe src="https://www.youtube.com/embed/VRraGrMmuIA"></iframe></div><div class="glass video-card long"><iframe src="https://www.youtube.com/embed/2qaf-_ZNwXE"></iframe></div><div class="glass video-card long"><iframe src="https://www.youtube.com/embed/Cm5MKh54Nd4"></iframe></div>
+</div></section>
+
+<section id="contact" class="reveal"><div class="glass contact" style="text-align:center">
+<h2>Fahad Amin</h2><br>
+<p>WhatsApp: 0317346090<br>Email: itsfahad190@gmail.com</p><br>
+<div class="buttons" style="justify-content:center">
+<a class="btn" href="mailto:itsfahad190@gmail.com">Send Email</a>
+<a class="btn" href="https://wa.me/92317346090">Message on WhatsApp</a>
+</div>
+</div></section>
+
+<div class="footer"><h3>Fahad Amin</h3><p>Video Editor</p><p>Turning Raw Footage Into Engaging Content</p></div>
+
+<script>
+setTimeout(()=>document.getElementById('loader').classList.add('hide'),1800);
+const obs=new IntersectionObserver(e=>e.forEach(x=>x.isIntersecting&&x.target.classList.add('show')));
+document.querySelectorAll('.reveal').forEach(x=>obs.observe(x));
+document.querySelectorAll('[data-count]').forEach(el=>{
+ let t=+el.dataset.count,c=0;
+ let i=setInterval(()=>{c++;el.textContent=c+'+';if(c>=t)clearInterval(i)},20);
+});
+const cur=document.querySelector('.cursor');
+addEventListener('mousemove',e=>{cur.style.left=(e.clientX-140)+'px';cur.style.top=(e.clientY-140)+'px'});
+</script>
+</body></html>
